@@ -16,15 +16,31 @@ public class Car {
     public Car(String pn){
         this.plateNumber = pn;
     }
-    public void move(){
-        x++;
-        y++;
-        speed++;
+    public void moveUp(){
+        this.y = y + 1;
+        this.speed++;
+    }
+    public void moveDown(){
+        this.y = (int) (y + 0.5);
+        this.speed--;
+    }
+    public void moveL(){
+        this.x--;
+    }
+    public void moveR(){
+        this.x++;
     }
     public void park(){
         speed=0;
     }
     public void accelerate(){
-        speed = speed +2;
+        this.y = y + 2;
+        this.speed = speed +2;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" + "plateNumber=" + plateNumber + ", x=" + x + ", y=" + y + ", speed=" + speed + '}';
+    }
+    
 }

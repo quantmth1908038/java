@@ -18,14 +18,17 @@ public class SoccerPlayer {
         this.name = name;
         this.number = num;
     }
-    public void run(){
-        x++;
-        y++;
+
+    public void runR(){
+        this.x++;
+    }
+    public void runL(){
+        this.x--;
     }
     public void jump(){
-       
+       this.y++;
     }
     public void kickBall(){
-       
+        
     }
 }
