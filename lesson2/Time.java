@@ -20,6 +20,9 @@ public class Time {
             this.minute = minute;
             this.second = second;
         }
+        else{
+            System.out.println("Not Time Value");
+        }
     }
 
     public int getHour() {
@@ -33,13 +36,31 @@ public class Time {
     }
 
     public void setHour(int hour) {
-        this.hour = hour;
+        if(0<=hour && hour<=23)
+        {
+            this.hour = hour;
+        }
+        else{
+            System.out.println("Not Time Value");
+        }
     }
     public void setMinute(int minute) {
-        this.minute = minute;
+        if(0<=minute && minute<=59)
+        {
+            this.minute = minute;
+        }
+        else{
+            System.out.println("Not Time Value");
+        }
     }
     public void setSecond(int second) {
-        this.second = second;
+        if(0<=second && second<=59)
+        {
+            this.second = second;
+        }
+        else{
+            System.out.println("Not Time Value");
+        }
     }
     
     public void setTime(int hour, int minute, int second){
@@ -48,42 +69,48 @@ public class Time {
             this.minute = minute;
             this.second = second;
         }
+        else{
+            System.out.println("Not Time Value");
+        }
     }
 
     @Override
     public String toString() {
-        if(hour<=9 && minute>9 && second>9){
-            return "Time= " + "0"+hour + ":" + minute + ":" + second + '}';
-        }
-        if(hour>9 && minute<=9 && second>9){
-            return "Time= " + hour + ":" + "0"+minute + ":" + second + '}';
-        }
-        
-        if(hour>9 && minute>9 && second<=9){
-            return "Time= " + hour + ":" + minute + ":" + "0"+second + '}';
-        }
-            
-        if(hour<=9 && minute<=9 && second>9){
-            return "Time= " + "0"+hour + ":" + "0"+minute + ":" + second + '}';
-        }
-            
-        if(hour>9 && minute<=9 && second<=9){
-            return "Time= " + hour + ":" + "0"+minute + ":" + "0"+second + '}';
-        }
-            
-        if(hour<=9 && minute<=9 && second<=9){
-            return "Time= " + "0"+hour + ":" + "0"+minute + ":" + "0"+second + '}';
-        }
-        else{
-            return "Time= " + hour + ":" + minute + ":" + second + '}';
-        }
+        return String.format("%02d:%02d:%02d", hour,minute,second);
     }
     
     public Time nextSecond(){
-        return new Time(hour, minute, second+1);
+        second+=1;
+        if(second==60){
+            minute+=1;
+            second=0;
+        }
+        if(minute==60){
+            hour+=1;
+            minute=0;
+        }
+        if(hour==24){
+            hour=0;
+            minute=0;
+            second=0;        
+        }
+        return new Time(hour, minute, second);
    }
     public Time preiousSecond(){
-        return new Time(hour, minute, second-1);
+        second-=1;
+        if(second==-1){
+            minute-=1;
+            second=0;
+        }
+        if(minute==-1){
+            hour-=1;
+            minute=0;
+        }
+        if(hour==-1){
+            hour=23;
+            minute=59;
+            second=59;        
+        }
+        return new Time(hour, minute, second);
    }
-
 }

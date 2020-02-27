@@ -21,6 +21,9 @@ public class Data {
             this.month = month;
             this.year = year;
         }
+        else{
+            System.out.println("Not Date Value");
+        }
     }
 
     public int getDay() {
@@ -38,17 +41,26 @@ public class Data {
         {
             this.day = day;
         }
+        else{
+            System.out.println("Not Date Value");
+        }
     }
     public void setMonth(int month) {
         if(1<=month && month<=12)
         {
             this.month = month;
         }
+        else{
+            System.out.println("Not Date Value");
+        }
     }
     public void setYear(int year) {
         if(1900<=year && year<=9999)
         {
             this.year = year;
+        }
+        else{
+            System.out.println("Not Date Value");
         }
     }
     public void setDate(int day, int month, int year){
@@ -58,23 +70,14 @@ public class Data {
             this.month = month;
             this.year = year;
         }
+        else{
+            System.out.println("Not Date Value");
+        }
     }
 
     @Override
     public String toString() {
-        if(day<=9 && month>9){
-            return "Data=" + "0"+day + "/" + month + "/" + year;
-        }
-        if(month<=9 && day>9){
-            return "Data="  + day + "/" + "0"+month + "/" + year;
-        }
-        if(month<=9 && day<=9){
-            return "Data="  + "0"+day + "/" + "0"+month + "/" + year;
-        }
-        else
-        {
-            return "Data="  + day + "/" + month + "/" + year;
-        }
+        return String.format("%02d/%02d/%04d", day,month,year);
     }
     
 }
