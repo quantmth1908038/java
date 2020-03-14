@@ -1,18 +1,25 @@
 package Practice;
 
+import java.util.Scanner;
+
 public class TestSalaryPolicy {
     public static void main(String[] args) {
-        EmployeeFullTime f1 = new EmployeeFullTime(1000000);
-        EmployeePartime p2 = new EmployeePartime(1000000);
+        float baseSalary;
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter Base Salary: ");
+        baseSalary = in.nextFloat();
 
-        System.out.println(f1.getSalary());
-        System.out.println(p2.getSalary());
+        EmployeeFullTime f1 = new EmployeeFullTime(baseSalary);
+        EmployeePartime p2 = new EmployeePartime(baseSalary);
 
-        SalaryPolicy s1 = new EmployeeFullTime(1500000);
-        SalaryPolicy s2 = new EmployeePartime(1500000);
+        System.out.println("Full Time Salary: " + f1.getSalary());
+        System.out.println("Part Time Salary: " + p2.getSalary());
 
-        System.out.println(s1.getSalary());
-        System.out.println(s2.getSalary());
+        SalaryPolicy s1 = new EmployeeFullTime(baseSalary);
+        SalaryPolicy s2 = new EmployeePartime(baseSalary);
+
+        System.out.println("Full Time Salary: " + s1.getSalary());
+        System.out.println("Part Time Salary: " + s2.getSalary());
 
     }
 
