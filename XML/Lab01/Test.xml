@@ -1,9 +1,0 @@
-<?xml version = "1.0" encoding="UTF-8"?>
-<employee>
-    <name>Frank</name>
-    <position>Chef</position>
-</employee>
-<employee>
-<name>Ronnie</name>
-<position>Chef</position>
-</employee>
