@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Hotel_Audit>
+    <Hotel_Name>
+        Precious View
+    </Hotel_Name>
+    <Hotel_Address>
+        #1, Where Street, Wherehow City, Wherewhy, 98045.
+        <Hotel_Phone>
+            (650)1243-0000
+        </Hotel_Phone>
+    </Hotel_Address>
+    <Hotel_Rating>
+        ***
+    </Hotel_Rating>
+    <Sunnary>
+        The hotel charges are resonable.
+    </Sunnary>
+</Hotel_Audit>
