@@ -1,0 +1,4 @@
+<!ENTITY en "1">
+<!ELEMENT BOOK (heading, message)>
+        <!ELEMENT message (#PCDATA)>
+        <!ELEMENT heading (#PCDATA)>

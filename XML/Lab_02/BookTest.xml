@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE BOOK SYSTEM "test.dtd" >
+<BOOK>
+    <heading>
+        &en;
+    </heading>
+    <message>
+        This is an XML document!
+    </message>
+</BOOK>
